@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--9g8f_s&juh@km4k7@95+)rjyi!e*_p&oonm**&jk&zmr(^y64'
+SECRET_KEY = 'django-insecure-8-aiu7j7p0%!8d*o8tjcvb^z-ko9l1*!ab*w0uu5@12ii^+g_o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "api.User"
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,29 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    "api",
-
-    "corsheaders",
+    'api',
 
     "rest_framework",
-    "rest_framework.authtoken",
-    
-    "dj_rest_auth",
-    "dj_rest_auth.registration",
-
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
 ]
-
-SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-
-    "corsheaders.middleware.CorsMiddleware",
-
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -86,17 +70,6 @@ TEMPLATES = [
         },
     },
 ]
-
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAuthenticated",
-    ),
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
-    ),
-    "EXCEPTION_HANDLER": "api.urls.custom_exception_handler"
-}
 
 WSGI_APPLICATION = 'cars.wsgi.application'
 

@@ -1,17 +1,16 @@
 from .models import *
 from django.contrib import admin
 
-class CarModelAdmin(admin.ModelAdmin):
-    list_display = ["car_brand", "name"]
 
-class UserCarAdmin(admin.ModelAdmin):
-    list_display = ["user", "car_brand", "car_model", "odometer"]
+class UserAdmin(admin.ModelAdmin):
+    list_display = ["username", "first_name", "last_name", "email"]
 
-class CarAdmin(admin.ModelAdmin):
-    list_display = ["user", "car_brand"]
 
-admin.site.register(User)
-admin.site.register(CarBrand)
-admin.site.register(CarModel, CarModelAdmin)
-admin.site.register(UserCar, UserCarAdmin)
-admin.site.register(Car)
+class CarBrandAdmin(admin.ModelAdmin):
+    list_display = ["name", "is_deleted", "deleted_at"]
+
+
+admin.site.register(User, UserAdmin)
+admin.site.register(CarBrand, CarBrandAdmin)
+admin.site.register(CarModel)
+admin.site.register(UserCar)
