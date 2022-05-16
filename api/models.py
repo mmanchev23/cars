@@ -65,7 +65,7 @@ class CarModel(SoftDeleteModel, models.Model):
     updated_at = models.DateTimeField(auto_now=True, editable=False)
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.car_brand} {self.name}"
 
 
 class UserCar(SoftDeleteModel, models.Model):
@@ -80,3 +80,15 @@ class UserCar(SoftDeleteModel, models.Model):
 
     def __str__(self) -> str:
         return f"{self.user} - {self.car_brand} {self.car_model}"
+
+
+class Car(SoftDeleteModel, models.Model):
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    car_brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, editable=False)
+
+    def __str__(self) -> str:
+        return f"{self.user} - {self.car_brand}"

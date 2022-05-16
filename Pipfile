@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 pillow = "*"
+django-rest-framework = "*"
+dj-rest-auth = "*"
+django-rest-auth = "*"
+django-allauth = "*"
+django-cors-headers = "*"
+coreapi = "*"
 
 [dev-packages]
 
