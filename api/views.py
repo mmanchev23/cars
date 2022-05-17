@@ -1,7 +1,9 @@
 from .models import *
+from .filters import *
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
+from django_filters import rest_framework as filters
 
         
 class UserView(viewsets.ModelViewSet):
@@ -14,9 +16,10 @@ class UserView(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         self.object_list = self.filter_queryset(self.get_queryset())
         serializer = self.get_serializer(self.object_list, many=True)
+        filterset_class = ("username")
 
         if self.object_list:
-            return Response({f"users" : serializer.data})
+            return Response({"users" : serializer.data})
         else:
             return Response({"Message" : "No users found!"})
 

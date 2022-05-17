@@ -10,6 +10,8 @@ django-cors-headers = "*"
 django-soft-delete = "*"
 dj-rest-auth = {extras = ["with_social"], version = "*"}
 django-allauth = "*"
+drf-yasg = "*"
+django-filter = "*"
 
 [dev-packages]
 

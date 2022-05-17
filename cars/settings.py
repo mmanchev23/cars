@@ -51,6 +51,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+
+    'drf_yasg',
+
+    'django_filters',
 ]
 
 SITE_ID = 1
@@ -94,6 +98,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
     ),
     'EXCEPTION_HANDLER': 'api.urls.custom_exception_handler'
 }
