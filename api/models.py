@@ -57,4 +57,4 @@ class Car(SoftDeleteModel):
     car_brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f"{self.user} - {self.car_brand.name} {self.car_model.name}"
+        return f"{self.user} - {self.car_brand.name}"

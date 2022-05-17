@@ -8,6 +8,8 @@ django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 django-soft-delete = "*"
+dj-rest-auth = {extras = ["with_social"], version = "*"}
+django-allauth = "*"
 
 [dev-packages]
 
