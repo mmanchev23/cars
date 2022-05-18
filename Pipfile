@@ -17,6 +17,7 @@ dj-database-url = "*"
 django-sslserver = "*"
 whitenoise = "*"
 gunicorn = "*"
+pillow = "*"
 
 [dev-packages]
 
