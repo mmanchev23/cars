@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import viewsets, permissions
 
         
-class UserView(viewsets.ModelViewSet):
+class UserView(viewsets.ReadOnlyModelViewSet):
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
     
