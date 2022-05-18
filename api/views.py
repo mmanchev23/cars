@@ -1,9 +1,7 @@
 from .models import *
-from .filters import *
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework import viewsets, permissions
-from django_filters import rest_framework as filters
 
         
 class UserView(viewsets.ModelViewSet):
@@ -16,12 +14,11 @@ class UserView(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         self.object_list = self.filter_queryset(self.get_queryset())
         serializer = self.get_serializer(self.object_list, many=True)
-        filterset_class = ("username")
 
         if self.object_list:
             return Response({"users" : serializer.data})
         else:
-            return Response({"Message" : "No users found!"})
+            return Response({"message" : "No users found!"})
 
 
 class CarBrandView(viewsets.ModelViewSet):
@@ -36,9 +33,9 @@ class CarBrandView(viewsets.ModelViewSet):
         serializer = self.get_serializer(self.object_list, many=True)
 
         if self.object_list:
-            return Response({"Brands" : serializer.data})
+            return Response({"brands" : serializer.data})
         else:
-            return Response({"Message" : "No brands found!"})
+            return Response({"message" : "No brands found!"})
 
 
 class CarModelView(viewsets.ModelViewSet):
@@ -53,9 +50,9 @@ class CarModelView(viewsets.ModelViewSet):
         serializer = self.get_serializer(self.object_list, many=True)
 
         if self.object_list:
-            return Response({"Models" : serializer.data})
+            return Response({"models" : serializer.data})
         else:
-            return Response({"Message" : "No models found!"})
+            return Response({"message" : "No models found!"})
 
 
 class UserCarView(viewsets.ModelViewSet):
@@ -70,9 +67,9 @@ class UserCarView(viewsets.ModelViewSet):
         serializer = self.get_serializer(self.object_list, many=True)
 
         if self.object_list:
-            return Response({"Results" : serializer.data})
+            return Response({"results" : serializer.data})
         else:
-            return Response({"Message" : "No results found!"})
+            return Response({"message" : "No results found!"})
 
 
 class CarView(viewsets.ModelViewSet):
@@ -87,6 +84,6 @@ class CarView(viewsets.ModelViewSet):
         serializer = self.get_serializer(self.object_list, many=True)
 
         if self.object_list:
-            return Response({"Cars" : serializer.data})
+            return Response({"cars" : serializer.data})
         else:
-            return Response({"Message" : "No cars found!"})
+            return Response({"message" : "No cars found!"})

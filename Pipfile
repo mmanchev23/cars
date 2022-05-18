@@ -11,7 +11,11 @@ django-soft-delete = "*"
 dj-rest-auth = {extras = ["with_social"], version = "*"}
 django-allauth = "*"
 drf-yasg = "*"
-django-filter = "*"
+psycopg2-binary = "*"
+python-dotenv = "*"
+dj-database-url = "*"
+django-sslserver = "*"
+whitenoise = "*"
 
 [dev-packages]
 
