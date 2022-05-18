@@ -16,6 +16,7 @@ python-dotenv = "*"
 dj-database-url = "*"
 django-sslserver = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
